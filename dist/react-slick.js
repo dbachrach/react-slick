@@ -1460,6 +1460,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      if (index >= count - infiniteCount) {
 	        key = -(count - index);
+	        childStyle = getSlideStyle((0, _objectAssign2['default'])({}, spec, { index: index, key: key }));
 	        preCloneSlides.push(_react2['default'].cloneElement(child, {
 	          key: getKey(child, key),
 	          'data-index': key,
@@ -1470,6 +1471,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      if (index < infiniteCount) {
 	        key = count + index;
+	        childStyle = getSlideStyle((0, _objectAssign2['default'])({}, spec, { index: index, key: key }));
 	        postCloneSlides.push(_react2['default'].cloneElement(child, {
 	          key: getKey(child, key),
 	          'data-index': key,
