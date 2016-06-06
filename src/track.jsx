@@ -37,6 +37,7 @@ var getSlideStyle = function (spec) {
 
   if (spec.variableWidth === undefined || spec.variableWidth === false) {
     style.width = spec.slideWidth;
+    style.display = (!spec.slideWidth && (spec.currentSlide !== spec.index || spec.key < 0 || spec.children.length <= spec.key)) ? 'none' : null;
   }
 
   if (spec.fade) {
