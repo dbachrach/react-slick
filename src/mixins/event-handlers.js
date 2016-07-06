@@ -158,16 +158,6 @@ var EventHandlers = {
         trackStyle: getTrackAnimateCSS(assign({left: currentLeft}, this.props, this.state))
       });
     }
-  },
-  onInnerSliderEnter: function (e) {
-    if (this.props.autoplay && this.props.pauseOnHover) {
-      this.pause();
-    }
-  },
-  onInnerSliderLeave: function (e) {
-    if (this.props.autoplay && this.props.pauseOnHover) {
-      this.autoPlay();
-    }
   }
 };
 

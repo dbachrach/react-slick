@@ -251,7 +251,19 @@ var helpers = {
       return;
     }
     var play = () => {
-      if (this.state.mounted) {
+      var thisEl = ReactDOM.findDOMNode(this);
+      var hoveredEls = document.querySelectorAll(':hover');
+
+      var mouseInside = false;
+      if (this.props.pauseOnHover) {
+        for (var i = 0; i < hoveredEls.length; ++i) {
+          if (hoveredEls[i] === thisEl) {
+            mouseInside = true;
+          }
+        }
+      }
+
+      if (this.state.mounted && !mouseInside) {
         var nextIndex = this.props.rtl ?
         this.state.currentSlide - this.props.slidesToScroll:
         this.state.currentSlide + this.props.slidesToScroll;
